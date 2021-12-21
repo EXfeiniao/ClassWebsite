@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head  th:replace="_fragments :: head(~{::title})">
+  <title>关于我们</title>
+</head>
+
+<body class="aboutme-bg">
+
+  <!--头部导航-->
+  <nav th:replace="_fragments :: menu(5)" ></nav>
+
+  <!--中间内容-->
+  <div  class="m-container m-padded-tb-big animated fadeIn">
+    <div class="ui container">
+
+      <div class="ui stackable grid">
+
+        <!--左边班主任-->
+        <div class="three wide column">
+          <div class="ui top attached segment">
+            <h3 class="ui blue header">班主任</h3>
+          </div>
+          <div class="ui attached segment">
+            <div class="ui card">
+              <div class="image">
+                <img th:src="@{https://hd.hainanu.edu.cn/__local/D/46/B0/C586410144CCD94596FEFC49F0A_94886868_112E.jpg}"
+                     class="ui medium circular image" alt="">
+              </div>
+              <div class="content">
+                <a class="header" href="https://hd.hainanu.edu.cn/cs/info/1104/1848.htm">杨厚群</a>
+                <div class="meta">
+                  <span class="date">工学博士、教授</span>
+                </div>
+                <br>
+                <p class="m-black">
+                  任教于海南大学信息科学技术学院计算机科学与技术系，硕士生导师。海口市深度学习与大数据应用技术重点实验室主任，海南省人工智能学会副理事长
+                </p>
+                <p>
+                  联系方式：yhq@hainanu.edu.cn
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--右边班级信息-->
+        <div class="thirteen wide column">
+
+          <div class="ui  attached segment">
+            <h3 class="ui blue header">班级信息</h3>
+          </div>
+          <div class="ui attached segment">
+            <h3 class="header">课表</h3>
+            <table class="ui celled padded table">
+              <thead>
+              <tr><th>时间</th>
+                <th>周日</th>
+                <th>周一</th>
+                <th>周二</th>
+                <th>周三</th>
+                <th>周四</th>
+                <th>周五</th>
+                <th>周六</th>
+              </tr></thead>
+              <tbody>
+
+              <tr>
+                <td>7:40-9:20</td>
+                <th> </th>
+                <th>软件工程</th>
+                <th>形势与政策</th>
+                <th></th>
+                <th></th>
+                <th> </th>
+                <th>软工实验课</th>
+              </tr>
+              <tr>
+                <td>9:45-11:25</td>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>形势与政策</th>
+                <th> </th>
+                <th></th>
+              </tr>
+              <tr>
+                <td>14:40-16:20</td>
+                <th></th>
+                <th></th>
+                <th> </th>
+                <th>软件工程</th>
+                <th></th>
+                <th> </th>
+                <th></th>
+              </tr>
+              <tr>
+                <td>14:40-16:20</td>
+                <th></th>
+                <th></th>
+                <th> </th>
+                <th></th>
+                <th></th>
+                <th> </th>
+                <th></th>
+              </tr>
+              <tr>
+                <td>14:40-16:20</td>
+                <th> </th>
+                <th>面向对象程序设计</th>
+                <th> </th>
+                <th>软件工程</th>
+                <th>面向对象程序设计</th>
+                <th> </th>
+                <th></th>
+              </tr>
+
+              </tbody>
+            </table>
+          </div>
+          <div class="ui attached segment">
+            <h3 class="header">共
+              <h2 class="ui blue header m-inline-block m-text-thin" th:text="${pageInfo.total}"> 6 </h2> 位同学
+            </h3>
+            <div class="ui three cards" th:each="user : ${pageInfo.list}">
+              <div class="card">
+                <div class="content">
+                  <a class="header">黄仕颖</a>
+                  <div class="meta" th:each="">
+                    <p>班长</p>
+                  </div>
+                  <div class="description">
+                    20岁，男，双鱼座，QQ：1628576806，爱好是未知的事物
+                  </div>
+                </div>
+                <div class="extra content">
+                  <span class="right floated">2019年入学 </span>
+                  <span><i class="user icon"></i> 预备党员 </span>
+                </div>
+              </div>
+              <div class="card">
+                <div class="content">
+                  <a class="header">黄仕颖</a>
+                  <div class="meta">
+                    <p>班长</p>
+                  </div>
+                  <div class="description">
+                    20岁，男，双鱼座，QQ：1628576806，爱好是未知的事物
+                  </div>
+                </div>
+                <div class="extra content">
+                  <span class="right floated">2019年入学 </span>
+                  <span><i class="user icon"></i> 预备党员 </span>
+                </div>
+              </div>
+              <div class="card">
+                <div class="content">
+                  <a class="header">黄仕颖</a>
+                  <div class="meta">
+                    <p>班长</p>
+                  </div>
+                  <div class="description">
+                    20岁，男，双鱼座，QQ：1628576806，爱好是未知的事物
+                  </div>
+                </div>
+                <div class="extra content">
+                  <span class="right floated">2019年入学 </span>
+                  <span><i class="user icon"></i> 预备党员 </span>
+                </div>
+              </div>
+              <div class="card">
+                <div class="content">
+                  <a class="header">黄仕颖</a>
+                  <div class="meta">
+                    <p>班长</p>
+                  </div>
+                  <div class="description">
+                    20岁，男，双鱼座，QQ：1628576806，爱好是未知的事物
+                  </div>
+                </div>
+                <div class="extra content">
+                  <span class="right floated">2019年入学 </span>
+                  <span><i class="user icon"></i> 预备党员 </span>
+                </div>
+              </div>
+              <div class="card">
+                <div class="content">
+                  <a class="header">黄仕颖</a>
+                  <div class="meta">
+                    <p>班长</p>
+                  </div>
+                  <div class="description">
+                    20岁，男，双鱼座，QQ：1628576806，爱好是未知的事物
+                  </div>
+                </div>
+                <div class="extra content">
+                  <span class="right floated">2019年入学 </span>
+                  <span><i class="user icon"></i> 预备党员 </span>
+                </div>
+              </div>
+              <div class="card">
+              <div class="content">
+                <a class="header">黄仕颖</a>
+                <div class="meta">
+                  <p>班长</p>
+                </div>
+                <div class="description">
+                  20岁，男，双鱼座，QQ：1628576806，爱好是未知的事物
+                </div>
+              </div>
+              <div class="extra content">
+                <span class="right floated">2019年入学 </span>
+                <span><i class="user icon"></i> 预备党员 </span>
+              </div>
+            </div>
+              <div class="card">
+                <div class="content">
+                  <a class="header">黄仕颖</a>
+                  <div class="meta">
+                    <p>班长</p>
+                  </div>
+                  <div class="description">
+                    20岁，男，双鱼座，QQ：1628576806，爱好是未知的事物
+                  </div>
+                </div>
+                <div class="extra content">
+                  <span class="right floated">2019年入学 </span>
+                  <span><i class="user icon"></i> 预备党员 </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <!--底部footer-->
+  <footer th:replace="_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive">
+
+  </footer>
+
+  <!--导入的script-->
+  <th:block th:replace="_fragments :: script">
+
+  </th:block>
+
+  <script>
+    $('.menu.toggle').click(function () {
+      $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $('.wechat').popup({
+      popup : $('.wechat-qr'),
+      position: 'bottom center'
+    });
+    $('.qq').popup();
+
+  </script>
+</body>
+</html>

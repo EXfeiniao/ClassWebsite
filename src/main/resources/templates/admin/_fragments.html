@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+  <head th:fragment="head(title)"> <!--title为传参-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:replace="${title}">详情</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../static/lib/editormd/css/editormd.min.css" th:href="@{/lib/editormd/css/editormd.min.css}">
+    <link rel="stylesheet" href="../../static/css/me.css" th:href="@{/css/me.css}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+    <!--<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>-->
+  </head>
+<body>
+
+<!--头部导航-->
+<nav th:fragment="menu(n)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small" >
+  <div class="ui container">
+    <div class="ui inverted secondary stackable menu">
+      <h2 class="ui teal header item">个人空间</h2>
+      <a href="#" th:href="@{/}" class="m-item item m-mobile-hide" th:classappend="${n==0}?'active'"><i class="home icon"></i>首页</a>
+      <a href="#" th:href="@{/admin/blogs}" class="m-item item m-mobile-hide" th:classappend="${n==1}?'active'"><i class="sticky note icon"></i></i>告示</a>
+      <a href="#" th:href="@{/admin/types}" class="m-item item m-mobile-hide" th:classappend="${n==2}?'active'"><i class="idea icon"></i>分类</a>
+      <a href="#" th:href="@{/admin/tags}" class="m-item item m-mobile-hide" th:classappend="${n==3}?'active'"><i class="tags icon"></i>标签</a>
+      <a href="#" th:href="@{/admin/tags}" class="m-item item m-mobile-hide" th:classappend="${n==4}?'active'"><i class="user icon"></i>学生信息</a>
+      <div class="right m-item m-mobile-hide menu">
+        <div class="ui dropdown  item">
+          <div class="text">
+            <img class="ui avatar image" src="https://picsum.photos/id/1081/100/100" th:src="@{${session.user.avatar}}">
+            <span th:text="${session.user.nickname}">管理员</span>
+          </div>
+          <i class="dropdown icon"></i>
+          <div class="menu">
+            <a href="#" th:href="@{/admin/logout}" class="item">注销</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+    <i class="sidebar icon"></i>
+  </a>
+</nav>
+
+
+<!--导航-->
+
+
+
+
+<!--底部footer-->
+<footer th:fragment="footer" class="ui vertical segment m-padded-tb-massive">
+  <div class="ui center aligned container">
+    <div class="ui divided stackable grid">
+
+      <div class="three wide column">
+        <div class="ui link list">
+          <div class="item">
+            <img src="../static/images/wechat.jpg" th:src="@{/images/wechat.jpg}"  class="ui rounded image" alt="" style="width: 110px">
+          </div>
+        </div>
+      </div>
+
+      <div class="three wide column">
+        <h4 class="ui header m-text-spaced ">联系开发人员</h4>
+        <div class="ui link list">
+          <a href="#" th:href="@{/about}"class="m-item green item m-mobile-hide" th:classappend="${n==5}?'active'">黄仕颖QQ: 1628576806</a>
+          <a href="#" th:href="@{/about}"class="m-item green item m-mobile-hide" th:classappend="${n==5}?'active'">赵巾迪QQ: 1310554426</a>
+          <a href="#" th:href="@{/about}"class="m-item green item m-mobile-hide" th:classappend="${n==5}?'active'">曹冰柠QQ: 1696130504</a>
+          <a href="#" th:href="@{/about}"class="m-item green item m-mobile-hide" th:classappend="${n==5}?'active'">汪璇QQ: 2677807875</a>
+          <a href="#" th:href="@{/about}"class="m-item green item m-mobile-hide" th:classappend="${n==5}?'active'">郑晶晶QQ: 1483367431</a>
+          <a href="#" th:href="@{/about}"class="m-item green item m-mobile-hide" th:classappend="${n==5}?'active'">周志成QQ: 1341012096</a>
+        </div>
+      </div>
+
+      <div class="ten wide column">
+        <h4 class="ui header m-text-spaced ">满江红·写怀</h4>
+        <p class="m-text-thin m-text-spaced m-opacity-mini">
+          怒发冲冠，凭栏处、潇潇雨歇。抬望眼、仰天长啸，壮怀激烈。</p>
+        <p class="m-text-thin m-text-spaced m-opacity-mini">
+          三十功名尘与土，八千里路云和月。莫等闲、白了少年头，空悲切。</p>
+        <p class="m-text-thin m-text-spaced m-opacity-mini">
+          靖康耻，犹未雪。臣子恨，何时灭。驾长车，踏破贺兰山缺。</p>
+        <p class="m-text-thin m-text-spaced m-opacity-mini">
+          壮志饥餐胡虏肉，笑谈渴饮匈奴血。待从头、收拾旧山河，朝天阙。</p>
+      </div>
+    </div>
+    <div class="ui section divider"></div>
+    <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright © 2021 19计科1班 软工开发小队</p>
+  </div>
+
+</footer>
+
+
+<th:block th:fragment="script">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+  <script src="../../static/lib/editormd/editormd.min.js" th:src="@{/lib/editormd/editormd.min.js}"></script>
+</th:block>
+
+</body>
+</html>
